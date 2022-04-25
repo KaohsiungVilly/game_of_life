@@ -6,7 +6,7 @@
 /*   By: pvillena <pvillena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 10:59:26 by pvillena          #+#    #+#             */
-/*   Updated: 2022/04/25 14:06:05 by pvillena         ###   ########.fr       */
+/*   Updated: 2022/04/25 14:26:28 by pvillena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,9 @@ int	main(int argc, char *argv[])
 	if (argc != 2)
 		return (1);
 	vars = init_vars(argv);
-	//print_map(vars.map);
 	paint_map(vars);
 	mlx_loop_hook(vars.mlx, render_next_frame, &vars);
 	mlx_hook(vars.mlx_win, 2, 1L<<0, key_hooks, &vars);
 	mlx_loop(vars.mlx);
-	//free_machine(vars.map);
 	return (0);
 }

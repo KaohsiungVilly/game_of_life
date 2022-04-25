@@ -46,11 +46,10 @@ void	game_of_life(t_vars *vars)
 	int		str_len;
 	int		i;
 	int		j;
+	int		nbr_rows;
 
-	//paint_map(vars);
-	//mlx_loop_hook(vars->mlx, paint_map, &vars);
 	str_len = ft_strlen(vars->map[0]);
-	next_gen = (char **)malloc(sizeof(char *) * (ft_nbr_rows(vars->map) + 1));
+	next_gen = (char **)malloc(sizeof(char *) * ( + 1));
 	i = -1;
 	while (vars->map[++i])
 		next_gen[i] = (char *)malloc(sizeof(char) * (str_len + 1));
@@ -69,6 +68,5 @@ void	game_of_life(t_vars *vars)
 	next_gen[i] = NULL;
 	free_machine(vars->map);
 	vars->map = next_gen;
-	//usleep(50);
 	paint_map(*vars);
 }
