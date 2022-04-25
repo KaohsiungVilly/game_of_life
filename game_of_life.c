@@ -35,9 +35,8 @@ char	get_current_pos(char **map, int i, int j)
 		return (bottom_row(i, j, map));
 	else if (i == nbr_rows && j == str_len)
 		return (bottom_right_corner(i, j, map));
-	else if (i > 0 && i < nbr_rows && j > 0 && j < str_len)
+	else
 		return (every_other_case(i, j, map));
-	return ('0');
 }
 
 void	game_of_life(t_vars *vars)
