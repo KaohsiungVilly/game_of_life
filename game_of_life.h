@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   game_of_life.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pvillena <pvillena@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/25 10:59:18 by pvillena          #+#    #+#             */
+/*   Updated: 2022/04/25 13:33:54 by pvillena         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef GAME_OF_LIFE_H
 # define GAME_OF_LIFE_H
 # include <stdlib.h>
@@ -38,7 +50,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strjoin(char const *s1, const char *s2);
 void	print_map(char **map);
-int		nbr_rows(char **map);
+int		ft_nbr_rows(char **map);
 void	free_machine(char **map);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 t_vars	get_scrn_size(t_vars vars);
@@ -46,7 +58,17 @@ t_vars	init_vars(char *argv[]);
 char	*get_next_line(int fd);
 char	**get_map(char *argv[]);
 char	*ft_strjoin(char const *s1, const char *s2);
-void	game_of_life(t_vars vars);
+void	game_of_life(t_vars *vars);
 void	paint_map(t_vars vars);
 void	paint_white_img(t_data img);
+char	top_left_corner(int i, int j, char **map);
+char	top_row(int i, int j, char **map);
+char	top_right_corner(int i, int j, char **map);
+char	left_column(int i, int j, char **map);
+char	right_column(int i, int j, char **map);
+char	bottom_left_corner(int i, int j, char **map);
+char	bottom_row(int i, int j, char **map);
+char	bottom_right_corner(int i, int j, char **map);
+char	every_other_case(int i, int j, char **map);
+char	calc_char(int count, char current);
 #endif

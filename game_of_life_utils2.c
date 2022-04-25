@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   game_of_life_utils2.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pvillena <pvillena@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/25 10:59:12 by pvillena          #+#    #+#             */
+/*   Updated: 2022/04/25 13:23:21 by pvillena         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "game_of_life.h"
 
 t_vars	get_scrn_size(t_vars vars)
@@ -9,13 +21,13 @@ t_vars	get_scrn_size(t_vars vars)
 	return (vars);
 }
 
-int	nbr_rows(char **map)
+int	ft_nbr_rows(char **map)
 {
 	int	i;
 
 	i = 0;
 	while (map[i++]);
-	return (i);
+	return (i - 1);
 }
 
 void	paint_white_img(t_data img)
@@ -52,4 +64,14 @@ void	paint_map(t_vars vars)
 		}
 		i++;
 	}
+}
+
+char	calc_char(int count, char current)
+{
+	if (current == '1' && (count == 2 || count == 3))
+		return ('1');
+	else if (current == '0' && count == 3)
+		return ('1');
+	else
+		return ('0');
 }

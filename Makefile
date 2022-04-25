@@ -1,6 +1,7 @@
 SRCS	= main.c init_vars.c get_next_line.c \
 		game_of_life_utils.c get_next_line_utils.c \
-		game_of_life_utils2.c game_of_life.c
+		game_of_life_utils2.c game_of_life.c \
+		position_functions.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -14,7 +15,7 @@ CC	= gcc
 
 RM	= rm -f
 
-CFLAGS	= -I. -Wall -Wextra -Werror -Imlx -g3 -fsanitize=address
+CFLAGS	= -I. -Wall -Wextra -Werror -Imlx
 
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
