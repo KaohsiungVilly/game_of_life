@@ -46,10 +46,9 @@ void	game_of_life(t_vars *vars)
 	int		str_len;
 	int		i;
 	int		j;
-	int		nbr_rows;
 
 	str_len = ft_strlen(vars->map[0]);
-	next_gen = (char **)malloc(sizeof(char *) * ( + 1));
+	next_gen = (char **)malloc(sizeof(char *) * (str_len + 1));
 	i = -1;
 	while (vars->map[++i])
 		next_gen[i] = (char *)malloc(sizeof(char) * (str_len + 1));

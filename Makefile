@@ -16,7 +16,6 @@ CC	= gcc
 RM	= rm -f
 
 CFLAGS	= -I. -Wall -Wextra -Werror -Imlx
-
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
