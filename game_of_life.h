@@ -6,7 +6,7 @@
 /*   By: pvillena <pvillena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 10:59:18 by pvillena          #+#    #+#             */
-/*   Updated: 2022/04/25 13:33:54 by pvillena         ###   ########.fr       */
+/*   Updated: 2022/04/25 18:01:56 by pvillena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct	s_scrn {
 typedef struct	s_vars {
 	void	*mlx;
 	void	*mlx_win;
+	t_data	img;
 	t_data	img_b;
 	t_data	img_w;
 	t_scrn	scrn;
@@ -60,7 +61,7 @@ char	**get_map(char *argv[]);
 char	*ft_strjoin(char const *s1, const char *s2);
 void	game_of_life(t_vars *vars);
 void	paint_map(t_vars vars);
-void	paint_white_img(t_data img);
+void	paint_white_img(t_data img, int x, int y);
 char	top_left_corner(int i, int j, char **map);
 char	top_row(int i, int j, char **map);
 char	top_right_corner(int i, int j, char **map);
