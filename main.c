@@ -14,8 +14,10 @@
 
 int	key_hooks(int keycode, t_vars *vars)
 {
-	if (!vars)
-		exit(1);
+	if (keycode == 126 && vars->sleep >= 1000)
+		vars->sleep -= 1000;
+	if (keycode == 125 && vars->sleep < 50000)
+		vars->sleep += 1000;
 	if (keycode == 53)
 		exit(0);
 	return (0);

@@ -43,6 +43,7 @@ typedef struct	s_vars {
 	t_data	img_w;
 	t_scrn	scrn;
 	char	**map;
+	int		sleep;
 }				t_vars;
 
 size_t	ft_strlen(const char *str);

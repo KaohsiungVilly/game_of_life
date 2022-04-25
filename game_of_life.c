@@ -66,6 +66,6 @@ void	game_of_life(t_vars *vars)
 	next_gen[i] = NULL;
 	free_machine(vars->map);
 	vars->map = next_gen;
-	usleep(25000);
+	usleep(vars->sleep);
 	paint_map(*vars);
 }
